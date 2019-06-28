@@ -1,24 +1,36 @@
 package piscine
 
-import (
-    "fmt"
-    "strconv"
-)
+import "fmt"
+import "strconv"
 
-func PrintComb() {
-for i:=0; i<10; i++{ 
-    	for j:=i+1; j<10; j++{
-         	for k:=j+1; k<10; k++{
-			if i == 0 && j == 1 && k == 2 {
-				fmt.Print("")
-			}else{
+func printi(b int, n int, a int, i int, l string) {
+	a++
+	for j := b + 1; j < 10-n+a; j++ {
+		if a < n {
+			printi(j, n, a, i, l+strconv.Itoa(j))
+		} else {
+			fmt.Print(l)
+			fmt.Print(j)
+			if i < 10-n {
 				fmt.Print(", ")
+			} else {
+				fmt.Print("\n")
 			}
-			ch := strconv.Itoa(i)
-			ch += strconv.Itoa(j)
-			ch += strconv.Itoa(k)
-             		fmt.Print(ch)
-        	}
-    	}
-    }
+		}
+	}
+}
+
+func PrintCombN(n int) {
+	for i := 0; i < 10; i++ {
+		if n > 1 {
+			printi(i, n, 1, i, strconv.Itoa(i))
+		} else {
+			fmt.Print(i)
+			if i < 10-n {
+				fmt.Print(", ")
+			} else {
+				fmt.Print("\n")
+			}
+		}
+	}
 }
