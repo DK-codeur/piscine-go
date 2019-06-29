@@ -26,6 +26,8 @@ func main(){
 	fmt.Println("")
   }
 
+Écrire un programme //qui affiche l'alphabet à l'envers, avec les lettres paires en majuscule, et les lettres impaires en minuscule, suivi d'un newline('\n').
+
   func main(){
 	for i:='Z'; i >= 'A'; i-- {
 	  if i%2==0{
